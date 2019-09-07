@@ -1,0 +1,65 @@
+<!-- 
+ (valueChange)="displayCounter($event)" -->
+<imageuploader (valueChange)="displayCounter($event)"></imageuploader>
+<br>
+<!-- <form #blogForm="ngForm"(ngSubmit)= "onSubmit(blogForm)">
+    <div class="form-gorup">
+        <label for="Naslov">Naslov</label>
+        <input type="text"
+        class="form-control"
+        name="Naslov"
+        #blogNaslov="ngModel"
+  
+    [(ngModel)]="Naslov"
+    required>
+  
+    </div>
+    <input type="submit" value="submit"class="btn btn-primary">
+</form> -->
+
+<br>    
+<angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="blog.vsebinaBloga"[config]="config"></angular-editor>
+
+
+  
+    
+<form (ngSubmit)="onSubmit()" #blogForm="ngForm">
+        {{diagnostic}}
+    <div class="form-group">
+        <label for="Naslov">Naslov</label>
+        <input [(ngModel)]="blog.naslov" name="Naslov"
+         id="Naslov" required #name="ngModel" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+            <label for="Povzetek">Povzetek</label>
+            <input [(ngModel)]="blog.povzetek" name="Povzetek"
+             id="Povzetek" required #name="ngModel" type="text" class="form-control">
+        </div>
+   
+    <button type="submit" class="btn btn-primary"[disabled]="!blogForm.form.valid">Submit</button>
+</form>
+
+<!-- <ng-quill-editor ng-model="title">
+    <ng-quill-toolbar>
+        <div>
+            <span class="ql-formats">
+                <button class="ql-bold" ng-attr-title="{{'Bold'}}"></button>
+            </span>
+            <span class="ql-formats">
+                <select class="ql-align" ng-attr-title="{{'Aligment'}}">
+                    <option selected></option>
+                    <option value="center"></option>
+                    <option value="right"></option>
+                    <option value="justify"></option>
+                </select>
+                <select class="ql-align">
+                    <option selected></option>
+                    <option value="center"></option>
+                    <option value="right"></option>
+                    <option value="justify"></option>
+                </select>
+            </span>
+        </div>
+    </ng-quill-toolbar>
+</ng-quill-editor> -->
+

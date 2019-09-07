@@ -1,0 +1,11 @@
+<div class="row"> 
+ <div class="col-md-4" *ngFor="let item of blogs">     <div class="card col-md-12" >
+        <img src={{item.povzetekSlika}}  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{item.naslov}}</h5>
+          <p class="card-text">{{item.povzetek}}</p>
+          <a  routerLink="/blogs/detail/{{item.id}}" class="btn btn-primary">Go somewhere</a>
+        </div>
+       </div> </div>
+
+</div>
